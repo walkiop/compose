@@ -49,7 +49,7 @@ def Teste():
 def getDados():
     try:
         cursor = mysql.connect().cursor()
-        sSql = "SELECT * from fibonacci where " + Segundo()
+        sSql = "SELECT * from fibonacci where posicao = " + Segundo()
         cursor.execute(sSql)
         
         r = [dict((cursor.Valor[i][0], value)
