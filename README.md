@@ -1,6 +1,3 @@
-# compose
-docker pull mongo
-
 git clone https://github.com/walkiop/compose.git
 
 cd compose
@@ -11,6 +8,11 @@ docker exec -it 65f bash
 
 mysql -uroot -p
 
+use fibdb
+
+
+
+#####
 git clone https://github.com/josecastillolema/fiap/aso/compose.git
 
 cd mongoDB-compose
