@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import json
 import traceback
 import base64
@@ -10,10 +11,10 @@ from flaskext.mysql import MySQL
 mysql = MySQL()
 app = Flask(__name__)
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'senhaFib'
-app.config['MYSQL_DATABASE_DB'] = 'fibdb'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'senhaFiap'
+app.config['MYSQL_DATABASE_DB'] = 'fiapdb'
 app.config['MYSQL_DATABASE_HOST'] = 'mysql'
-
+#app.config['CORS_HEADERS'] = 'Content-Type'
 mysql.init_app(app)
 
 def json_serial(obj):
@@ -24,18 +25,13 @@ def json_serial(obj):
 
 def teste():
     cursor = mysql.connect().cursor()
-    cursor.execute("SELECT * from fibonacci")
+    cursor.execute("SELECT * from Aso")
     print cursor, str(cursor)
-    r = [dict((cursor.Valor[i][0], value)
+    r = [dict((cursor.description[i][0], value)
               for i, value in enumerate(row)) for row in cursor.fetchall()]
     json_string = json.dumps(r, default=json_serial)
     print json_string
     return "hola"
-
-def Segundo():
-    data_e_hora_atuais = datetime.now()
-    data_e_hora_em_texto = data_e_hora_atuais.strftime('%S')
-    return int(data_e_hora_em_texto)
 
 @app.route("/")
 def hello():
@@ -49,10 +45,8 @@ def Teste():
 def getDados():
     try:
         cursor = mysql.connect().cursor()
-        sSql = "SELECT * from fibonacci where " + Segundo()
-        cursor.execute(sSql)
-        
-        r = [dict((cursor.Valor[i][0], value)
+        cursor.execute("SELECT * from Aso")
+        r = [dict((cursor.description[i][0], value)
             for i, value in enumerate(row)) for row in cursor.fetchall()]
         json_string = json.dumps(r, default=json_serial)
         return json_string
