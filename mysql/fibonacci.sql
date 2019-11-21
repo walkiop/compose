@@ -2,7 +2,6 @@
 create database if not exists fibdb;
 use fibdb;
 create table if not exists fibonacci (posicao INT(2), valor CHAR(13));
-insert into fibonacci values (0, 0);
 insert into fibonacci values (0,0);
 insert into fibonacci values (1,1);
 insert into fibonacci values (2,1);
