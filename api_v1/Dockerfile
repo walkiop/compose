@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:2-alpine
 
 ADD api.py requirements.txt /
 RUN pip install -r ./requirements.txt
