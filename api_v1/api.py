@@ -33,7 +33,7 @@ def getDados():
     try:
         cursor = mysql.connect().cursor()
         cursor.execute("SELECT * from fibonacci")
-        r = [dict((cursor.valor[i][0], value)
+        r = [dict((cursor.description[i][0], value)
             for i, value in enumerate(row)) for row in cursor.fetchall()]
         json_string = json.dumps(r, default=json_serial)
         return json_string
