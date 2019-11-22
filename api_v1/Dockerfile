@@ -1,4 +1,4 @@
-FROM python:2
+FROM python:3
 
 ADD api.py requirements.txt /
 RUN pip install -r ./requirements.txt
