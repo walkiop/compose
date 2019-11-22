@@ -17,6 +17,6 @@ services:
     volumes:
       - /var/lib/mysql
     environment:
-       MYSQL_ROOT_PASSWORD: senhaFiap
+       MYSQL_ROOT_PASSWORD: senhaFib
        MYSQL_USER: root
-       MYSQL_DATABASE: fiapdb
+       MYSQL_DATABASE: fibonaccidb
