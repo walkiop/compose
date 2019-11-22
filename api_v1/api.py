@@ -49,8 +49,9 @@ def hello():
 def getDados():
     try:
         cursor = mysql.connect().cursor()
-        sSql = "SELECT * from fibonacci where posicao = " + Segundo()
-        cursor.execute(sSql)
+        #sSql = "SELECT * from fibonacci where posicao = " + Segundo()
+        #cursor.execute(sSql)
+        cursor.execute("SELECT * from fibonacci")
         
         r = [dict((cursor.Valor[i][0], value)
             for i, value in enumerate(row)) for row in cursor.fetchall()]
