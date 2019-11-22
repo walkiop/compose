@@ -11,10 +11,10 @@ from flaskext.mysql import MySQL
 mysql = MySQL()
 app = Flask(__name__)
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'senhaFiap'
-app.config['MYSQL_DATABASE_DB'] = 'fiapdb'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'senhaFib'
+app.config['MYSQL_DATABASE_DB'] = 'fibonaccidb'
 app.config['MYSQL_DATABASE_HOST'] = 'mysql'
-#app.config['CORS_HEADERS'] = 'Content-Type'
+
 mysql.init_app(app)
 
 def json_serial(obj):
@@ -30,7 +30,7 @@ def Segundo():
     
 @app.route("/")
 def hello():
-    return "Benvido a API FIAP!\n"
+    return "Esta API gera números da sequencia de Fibonacci, pegando a posição conforme o segundo atual (getDados)!\n"
 
 @app.route("/getDados")
 def getDados():
