@@ -1,18 +1,15 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 
-# Connect to the database
-connection = pymysql.connect(host='mysql',
-                             user='root',
-                             password='senhaFiap',
-                             db='fiapdb',
-                             charset='utf8mb4',
-                             cursorclass=pymysql.cursors.DictCursor)
+import pymysql
 
-try:
-    with connection.cursor() as cursor:
-        # Read a single record
-        sql = "SELECT posicao, valor FROM fibonacci WHERE posicao = %s"
-        cursor.execute(sql, 5)
-        result = cursor.fetchone()
-        print(result)
-finally:
-    connection.close()
+con = pymysql.connect('mysql', 'root', 
+    'senhaFiap', 'fiapdb')
+
+with con:
+    cur = con.cursor()
+    cur.execute("SELECT VERSION()")
+
+    version = cur.fetchone()
+    
+    print("Database version: {}".format(version[0]))
