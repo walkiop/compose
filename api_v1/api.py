@@ -22,15 +22,15 @@ def json_serial(obj):
         return obj.isoformat()
     raise TypeError ("Type %s not serializable" % type(obj))
 
-#def teste():
-#    cursor = mysql.connect().cursor()
-#    cursor.execute("SELECT * from fibonacci")
-#    print cursor, str(cursor)
-#    r = [dict((cursor.Valor[i][0], value)
-#              for i, value in enumerate(row)) for row in cursor.fetchall()]
-#    json_string = json.dumps(r, default=json_serial)
-#    print json_string
-#    return "hola"
+def teste():
+    cursor = mysql.connect().cursor()
+    cursor.execute("SELECT * from fibonacci")
+    print cursor, str(cursor)
+    r = [dict((cursor.Valor[i][0], value)
+              for i, value in enumerate(row)) for row in cursor.fetchall()]
+    json_string = json.dumps(r, default=json_serial)
+    print json_string
+    return "hola"
 
 def Segundo():
     data_e_hora_atuais = datetime.now()
@@ -41,9 +41,9 @@ def Segundo():
 def hello():
     return "Benvido a API FIAP!\n"
 
-#@app.route("/Teste")
-#def Teste():
-#    return "Welcome to teste!\n"
+@app.route("/Teste")
+def Teste():
+    return "Welcome to teste!\n"
 
 @app.route("/getDados")
 def getDados():
