@@ -3,7 +3,7 @@
 
 import pymysql
 
-con = pymysql.connect('mysql', 'root', 
+con = pymysql.connect('localhost', 'root', 
     'senhaFiap', 'fiapdb')
 
 with con:
