@@ -1,6 +1,6 @@
 #arquivo fibonacci.sql
-create database if not exists fiapdb;
-use fiapdb;
+create database if not exists fibonaccidb;
+use fibonaccidb;
 create table if not exists fibonacci (posicao INT(2), valor CHAR(13));
 insert into fibonacci values (0,0);
 insert into fibonacci values (1,1);
