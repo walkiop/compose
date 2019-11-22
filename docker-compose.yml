@@ -20,3 +20,4 @@ services:
        MYSQL_ROOT_PASSWORD: senhaFib
        MYSQL_USER: root
        MYSQL_DATABASE: fibdb
+       MYSQL_ROOT_HOST: mysql
