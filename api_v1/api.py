@@ -26,7 +26,7 @@ def json_serial(obj):
 def Segundo():
     data_e_hora_atuais = datetime.now()
     data_e_hora_em_texto = data_e_hora_atuais.strftime('%S')
-    return int(data_e_hora_em_texto)
+    return data_e_hora_em_texto
     
 @app.route("/")
 def hello():
