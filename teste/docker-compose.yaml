@@ -9,7 +9,12 @@ services:
       - mysql
     depends_on:
       - mysql
-
+    deploy:
+      replicas: 3
+    mode: replicated  
+    restart_policy:
+        condition: on-failure
+        
   mysql:
     image: walkio/compose_mysql
     ports:
@@ -20,3 +25,7 @@ services:
        MYSQL_ROOT_PASSWORD: senhaFib
        MYSQL_USER: root
        MYSQL_DATABASE: fibonaccidb
+    deploy:
+      replicas: 1
+    restart_policy:
+        condition: on-failure
