@@ -1,0 +1,22 @@
+version: '2'
+services:
+
+  api:
+    image: walkio/compose_api
+    ports:
+      - "4000:5000"
+    links:
+      - mysql
+    depends_on:
+      - mysql
+
+  mysql:
+    image: walkio/compose_mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/lib/mysql
+    environment:
+       MYSQL_ROOT_PASSWORD: senhaFib
+       MYSQL_USER: root
+       MYSQL_DATABASE: fibonaccidb
