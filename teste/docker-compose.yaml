@@ -3,7 +3,7 @@ version: '3'
 services:
 
   api:
-    image: josecastillolema/api
+    image: walkio/compose_api
     ports:
       - "3000:5000"
     depends_on:
@@ -18,13 +18,13 @@ services:
         condition: on-failure
 
   mysql:
-    image: josecastillolema/mysql
+    image: walkio/compose_mysql
     ports:
       - "3306:3306"
     environment:
       MYSQL_USER: root
-      MYSQL_DATABASE: fiapdb
-      MYSQL_ROOT_PASSWORD: senhaFiap
+      MYSQL_DATABASE: fibonaccidb
+      MYSQL_ROOT_PASSWORD: senhaFib
     deploy:
       replicas: 1
       # resources:
