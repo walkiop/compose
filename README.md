@@ -20,3 +20,12 @@ cd mongoDB-compose
 git pull --atualiza repositorio
 
 docker exec -it mongodb-container bash
+
+#subir imagem para dockerHub
+docker login
+docker images
+docker tag compose_mysql walkio/compose_mysql
+docker tag compose_api walkio/compose_mysql
+
+docker push walkio/compose_mysql
+docker push walkio/compose_api
